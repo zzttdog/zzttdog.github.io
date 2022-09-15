@@ -1,0 +1,627 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/snakep/001.jpg">
+  <link rel="icon" href="/img/snakep/001.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="遇到的问题与解决的过程">
+  <meta name="author" content="ZZTT">
+  <meta name="keywords" content="">
+  
+  <title>hexo配置 - zzttdog的博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/my_css.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"zzttdog.gitee.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":160,"cursorChar":"❀","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"NFyyUl0pJ0auJMeCHx102sBc-gzGzoHsz","app_key":"yYIXtg2sR126Nc8N0tO7nyfo","server_url":"https://nfyyul0p.lc-cn-n1-shared.com"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- 一言API -->
+<!-- 现代写法，推荐 -->
+<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<!--End-->
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText = data.hitokoto + '——【' + data.from + '】';
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+</script>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ZZTT的博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                测试
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://travellings.link/">
+                    
+                    开往
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html">
+                    
+                    黑洞
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="http://zzttdog.gitee.io/zzttdog_test">
+                    
+                    gitee库Demo
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/example/">
+                    
+                    Demo
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/mao.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="hexo配置">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-08-21 21:00" pubdate>
+        2021年8月21日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      606 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      8
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">hexo配置</h1>
+            
+            <div class="markdown-body">
+              <h1 id="关于-Blog-的搭建"><a href="#关于-Blog-的搭建" class="headerlink" title="关于 Blog 的搭建"></a>关于 Blog 的搭建</h1><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=450 src="//music.163.com/outchain/player?type=4&id=347370082&auto=0&height=430"></iframe>
+<p id="hitokoto">正在加载一言...</p> 
+<img src="https://api.dujin.org/bing/1920.php" srcset="/img/loading.gif" lazyload alt="Bing每日图片超高清" />
+
+<p>一段音乐（<del>我收藏的宝藏女孩</del>），一句文字（<del>每次刷新自动更换</del>），一张美图（<del>必应每天自动更换</del>）。</p>
+<h2 id="001-Hexo"><a href="#001-Hexo" class="headerlink" title="001 Hexo"></a>001 Hexo</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a><sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="Hexo[Hexo]: https://hexo.io/zh-cn/[Node.js]: https://nodejs.org/zh-cn/[Git]: http://git-scm.com/[Commands]: https://hexo.io/zh-cn/docs/commands[easyhexo]: https://easyhexo.com/
+">[1]</span></a></sup> 是<del>最</del>快速、简洁且高效的博客框架。</p>
+<h3 id="博客的搭建使用的-Hexo"><a href="#博客的搭建使用的-Hexo" class="headerlink" title="博客的搭建使用的 Hexo"></a>博客的搭建使用的 Hexo</h3><h4 id="Hexo-的安装"><a href="#Hexo-的安装" class="headerlink" title="Hexo 的安装"></a>Hexo 的安装</h4><p>1、安装 <a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">Node.js</a><br>2、安装 <a target="_blank" rel="noopener" href="http://git-scm.com/">Git</a><br>3、执行 npm install -g hexo -cli</p>
+<h4 id="Blog-的搭建"><a href="#Blog-的搭建" class="headerlink" title="Blog 的搭建"></a>Blog 的搭建</h4><p>hexo init blog<br>cd blog<br>npm install</p>
+<h4 id="常用指令-Commands"><a href="#常用指令-Commands" class="headerlink" title="常用指令 Commands"></a>常用指令 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/commands">Commands</a></h4><p>hexo d -g </p>
+<h4 id="推荐网站"><a href="#推荐网站" class="headerlink" title="推荐网站"></a>推荐网站</h4><p>推荐一个快速上手的网站 <a target="_blank" rel="noopener" href="https://easyhexo.com/">easyhexo</a></p>
+<h2 id="002-Fluid"><a href="#002-Fluid" class="headerlink" title="002 Fluid"></a>002 Fluid</h2><p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/">Fluid</a><sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="Fluid[fluid]: https://hexo.fluid-dev.com/docs/[butterfly]: https://github.com/jerryc127/hexo-theme-butterfly[Themes]: https://hexo.io/themes/
+">[2]</span></a></sup> 是目前来说我个人最满意的主题。<br><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">butterfly</a> 也挺不错的。</p>
+<h3 id="主题我采用的是-Fluid"><a href="#主题我采用的是-Fluid" class="headerlink" title="主题我采用的是 Fluid"></a>主题我采用的是 Fluid</h3><p>其他常见的主题参见 <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Themes</a></p>
+<h2 id="003-Markdown"><a href="#003-Markdown" class="headerlink" title="003 Markdown"></a>003 Markdown</h2><p><a target="_blank" rel="noopener" href="https://markdown.com.cn/intro.html">Markdown</a><sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="Markdown[Markdown]: https://markdown.com.cn/intro.html[Runoob]:https://www.runoob.com/markdown/md-tutorial.html[W3cschool]: https://www.w3cschool.cn/markdownyfsm/markdownyfsm-odm6256r.html
+">[3]</span></a></sup> 是是一种轻量级的标记语言。</p>
+<h3 id="写文章使用的-Markdown"><a href="#写文章使用的-Markdown" class="headerlink" title="写文章使用的 Markdown"></a>写文章使用的 Markdown</h3><h4 id="部分教程"><a href="#部分教程" class="headerlink" title="部分教程"></a>部分教程</h4><p><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Runoob</a><br><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/markdownyfsm/markdownyfsm-odm6256r.html">W3cschool</a></p>
+<h2 id="004-Valine"><a href="#004-Valine" class="headerlink" title="004 Valine"></a>004 Valine</h2><p><a target="_blank" rel="noopener" href="https://valine.js.org/">Valine</a> 是一款快速、简洁且高效的无后端评论系统。<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><span class="hint--top hint--rounded" aria-label="Valine[Valine]: https://valine.js.org/[Leandcloud]: https://console.leancloud.cn/
+">[4]</span></a></sup></p>
+<h3 id="评论区我用的是-Valine"><a href="#评论区我用的是-Valine" class="headerlink" title="评论区我用的是 Valine"></a>评论区我用的是 Valine</h3><h4 id="Valine-的使用"><a href="#Valine-的使用" class="headerlink" title="Valine 的使用"></a>Valine 的使用</h4><p>1、注册 <a target="_blank" rel="noopener" href="https://console.leancloud.cn/">Leandcloud</a><br>2、在 Leandlound 的设置中找到 APP ID 和 APP KEY<br>3、在 config 中设置<br>4、npm install valine</p>
+<h2 id="005-Encrypt"><a href="#005-Encrypt" class="headerlink" title="005 Encrypt"></a>005 Encrypt</h2><p><a target="_blank" rel="noopener" href="https://github.com/D0n9X1n/hexo-blog-encrypt/blob/master/ReadMe.zh.md">Encrypt</a><sup id="fnref:5" class="footnote-ref"><a href="#fn:5" rel="footnote"><span class="hint--top hint--rounded" aria-label="Encrypt[Encrypt]: https://github.com/D0n9X1n/hexo-blog-encrypt/blob/master/ReadMe.zh.md
+">[5]</span></a></sup> 是 Hexo 生态圈中(<del>最好的</del>)博客加密插件。</p>
+<h3 id="部分文章使用了-Encrypt"><a href="#部分文章使用了-Encrypt" class="headerlink" title="部分文章使用了 Encrypt"></a>部分文章使用了 Encrypt</h3><h4 id="Encrypt-的使用"><a href="#Encrypt-的使用" class="headerlink" title="Encrypt 的使用"></a>Encrypt 的使用</h4><p>1、npm install –save hexo-blog-encrypt</p>
+<h2 id="006-Api"><a href="#006-Api" class="headerlink" title="006 Api"></a>006 Api</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/api/">API</a><sup id="fnref:6" class="footnote-ref"><a href="#fn:6" rel="footnote"><span class="hint--top hint--rounded" aria-label="Api[Hitokoto]: https://developer.hitokoto.cn/[Jinrishici]: https://www.jinrishici.com/[NeteaseCloudMusic]: https://binaryify.github.io/NeteaseCloudMusicApi/#/
+">[6]</span></a></sup> 这部分是一些有趣的小东西</p>
+<h3 id="一些我使用或没用的-API"><a href="#一些我使用或没用的-API" class="headerlink" title="一些我使用或没用的 API"></a>一些我使用或没用的 API</h3><p><a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/">Hitokoto</a><br><a target="_blank" rel="noopener" href="https://www.jinrishici.com/">Jinrishici</a><br><a target="_blank" rel="noopener" href="https://binaryify.github.io/NeteaseCloudMusicApi/#/">NeteaseCloudMusic</a></p>
+<h2 id="007-Charts"><a href="#007-Charts" class="headerlink" title="007 Charts"></a>007 Charts</h2><p><a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/index.html">ECharts</a> 是一个基于 JavaScript 的开源可视化图表库<br><a target="_blank" rel="noopener" href="https://chartjs.bootcss.com/">Charts</a> 是一个简单灵活的 JavaScript 图表工具</p>
+<h3 id="图表部分使用的-ECharts"><a href="#图表部分使用的-ECharts" class="headerlink" title="图表部分使用的 ECharts"></a>图表部分使用的 ECharts</h3><h4 id="ECharts-的使用"><a href="#ECharts-的使用" class="headerlink" title="ECharts 的使用"></a>ECharts 的使用</h4><p>1、npm npm install hexo-tag-echarts –save</p>
+<h2 id="008-Aplayer"><a href="#008-Aplayer" class="headerlink" title="008 Aplayer"></a>008 Aplayer</h2><p><a target="_blank" rel="noopener" href="https://aplayer.netlify.app/docs/">Aplayer</a><sup id="fnref:7" class="footnote-ref"><a href="#fn:7" rel="footnote"><span class="hint--top hint--rounded" aria-label="Charts[EChart]:https://echarts.apache.org/zh/index.html[Charts]:https://chartjs.bootcss.com/[Chart]:https://shen-yu.gitee.io/2020/chartjs/
+">[7]</span></a></sup> 播放器是一个 Hexo 标签插件</p>
+<h3 id="部分音乐会使用-Aplayer"><a href="#部分音乐会使用-Aplayer" class="headerlink" title="部分音乐会使用 Aplayer"></a>部分音乐会使用 Aplayer</h3><h4 id="Aplayer-的使用"><a href="#Aplayer-的使用" class="headerlink" title="Aplayer 的使用"></a>Aplayer 的使用</h4><p>1、npm install –save hexo-tag-aplayer</p>
+<h2 id="009-Dplayer"><a href="#009-Dplayer" class="headerlink" title="009 Dplayer"></a>009 Dplayer</h2><p><a target="_blank" rel="noopener" href="http://dplayer.js.org/zh/">Dplayer</a><sup id="fnref:8" class="footnote-ref"><a href="#fn:8" rel="footnote"><span class="hint--top hint--rounded" aria-label="Aplayer[Aplayer]: https://aplayer.netlify.app/docs/[Aplayer_github]: https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md
+">[8]</span></a></sup> 视频播放使用的一个 Hexo 标签插件</p>
+<h3 id="部分视频会使用-Dplayer"><a href="#部分视频会使用-Dplayer" class="headerlink" title="部分视频会使用 Dplayer"></a>部分视频会使用 Dplayer</h3><h4 id="Aplayer-的使用-1"><a href="#Aplayer-的使用-1" class="headerlink" title="Aplayer 的使用"></a>Aplayer 的使用</h4><p>1、npm install –save hexo-tag-aplayer</p>
+<h2 id="010-Other"><a href="#010-Other" class="headerlink" title="010 Other"></a>010 Other</h2><p>(<del>维护中</del>)</p>
+<h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><a class="btn" href="http://zzttdog.gitee.io/"  title="title" target="_blank">回到主页</a><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>Hexo<br>[Hexo]: <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a><br>[Node.js]: <a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">https://nodejs.org/zh-cn/</a><br>[Git]: <a target="_blank" rel="noopener" href="http://git-scm.com/">http://git-scm.com/</a><br>[Commands]: <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/commands">https://hexo.io/zh-cn/docs/commands</a><br>[easyhexo]: <a target="_blank" rel="noopener" href="https://easyhexo.com/">https://easyhexo.com/</a>
+<p><a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>Fluid<br>[fluid]: <a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/">https://hexo.fluid-dev.com/docs/</a><br>[butterfly]: <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">https://github.com/jerryc127/hexo-theme-butterfly</a><br>[Themes]: <a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a><br><a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span>Markdown<br>[Markdown]: <a target="_blank" rel="noopener" href="https://markdown.com.cn/intro.html">https://markdown.com.cn/intro.html</a><br>[Runoob]:<a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">https://www.runoob.com/markdown/md-tutorial.html</a><br>[W3cschool]: <a target="_blank" rel="noopener" href="https://www.w3cschool.cn/markdownyfsm/markdownyfsm-odm6256r.html">https://www.w3cschool.cn/markdownyfsm/markdownyfsm-odm6256r.html</a><br><a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:4" class="footnote-text"><span>Valine<br>[Valine]: <a target="_blank" rel="noopener" href="https://valine.js.org/">https://valine.js.org/</a><br>[Leandcloud]: <a target="_blank" rel="noopener" href="https://console.leancloud.cn/">https://console.leancloud.cn/</a><br><a href="#fnref:4" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:5" class="footnote-text"><span>Encrypt<br>[Encrypt]: <a target="_blank" rel="noopener" href="https://github.com/D0n9X1n/hexo-blog-encrypt/blob/master/ReadMe.zh.md">https://github.com/D0n9X1n/hexo-blog-encrypt/blob/master/ReadMe.zh.md</a><br><a href="#fnref:5" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:6" class="footnote-text"><span>Api<br>[Hitokoto]: <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/">https://developer.hitokoto.cn/</a><br>[Jinrishici]: <a target="_blank" rel="noopener" href="https://www.jinrishici.com/">https://www.jinrishici.com/</a><br>[NeteaseCloudMusic]: <a target="_blank" rel="noopener" href="https://binaryify.github.io/NeteaseCloudMusicApi/#/">https://binaryify.github.io/NeteaseCloudMusicApi/#/</a><br><a href="#fnref:6" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:7" class="footnote-text"><span>Charts<br>[EChart]:<a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/index.html">https://echarts.apache.org/zh/index.html</a><br>[Charts]:<a target="_blank" rel="noopener" href="https://chartjs.bootcss.com/">https://chartjs.bootcss.com/</a><br>[Chart]:<a target="_blank" rel="noopener" href="https://shen-yu.gitee.io/2020/chartjs/">https://shen-yu.gitee.io/2020/chartjs/</a><br><a href="#fnref:7" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:8" class="footnote-text"><span>Aplayer<br>[Aplayer]: <a target="_blank" rel="noopener" href="https://aplayer.netlify.app/docs/">https://aplayer.netlify.app/docs/</a><br>[Aplayer_github]: <a target="_blank" rel="noopener" href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md">https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md</a><br><a href="#fnref:8" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:9" class="footnote-text"><span>Dplayer<br>[Dplayer]: <a target="_blank" rel="noopener" href="http://dplayer.js.org/zh/">http://dplayer.js.org/zh/</a><br><a href="#fnref:9" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0/">长期更新</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/11/03%20%E5%A5%BD%E4%B9%85%E4%B8%8D%E8%A7%81/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">好久不见</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/08/20/01%20hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"NFyyUl0pJ0auJMeCHx102sBc-gzGzoHsz","appKey":"yYIXtg2sR126Nc8N0tO7nyfo","placeholder":"说点什么","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+           <div>记录 | 成长</div> 
+        </div>
+      </div>
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+             🤨总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+             😔总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="/js/my_js.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
