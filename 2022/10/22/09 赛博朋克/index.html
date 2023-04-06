@@ -1,0 +1,748 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/snakep/001.jpg">
+  <link rel="icon" href="/img/snakep/001.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="浅谈">
+  <meta name="author" content="ZZTT">
+  <meta name="keywords" content="">
+  
+  <title>Cyberpunk - zzttdog的博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/my_css.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"zzttdog.gitee.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":160,"cursorChar":"❀","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"NFyyUl0pJ0auJMeCHx102sBc-gzGzoHsz","app_key":"yYIXtg2sR126Nc8N0tO7nyfo","server_url":"https://nfyyul0p.lc-cn-n1-shared.com"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- 一言API -->
+<!-- 现代写法，推荐 -->
+<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<!--End-->
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText = data.hitokoto + '——【' + data.from + '】';
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+</script>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ZZTT的博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                测试
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://travellings.link/">
+                    
+                    开往
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html">
+                    
+                    黑洞
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="http://zzttdog.gitee.io/zzttdog_test">
+                    
+                    gitee库Demo
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/example/">
+                    
+                    Demo
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/FM/my_Cyberpunk.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Cyberpunk">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-10-22 21:00" pubdate>
+        2022年10月22日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      35
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Cyberpunk</h1>
+            
+            <div class="markdown-body">
+              <h1 id="Cyberpunk"><a href="#Cyberpunk" class="headerlink" title=" Cyberpunk"></a><center> Cyberpunk</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>&emsp;&emsp;赛博朋克( Cyberpunk )是“控制论”( Cybernetics )与“朋克”( Punk )的结合词，以信息技术为主体的科幻故事之分支。类似风格者还有以蒸气技术为主体的“蒸气朋克”、以生化技术为主体的“生化朋克”等等。<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="Cyberpunk[赛博朋克( Cyberpunk ) 维基百科]: https://zh.wikipedia.org/wiki/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B#%E5%B0%8F%E8%AA%AA[蒸汽朋克( Steampunk ) 维基百科]: https://zh.wikipedia.org/wiki/%E8%92%B8%E6%B1%BD%E6%9C%8B%E5%85%8B[生物朋克( Biopunk ) 维基百科]: https://zh.wikipedia.org/wiki/%E7%94%9F%E7%89%A9%E6%9C%8B%E5%85%8B[新云奖官网]: https://nebulas.sfwa.org//[雨果奖官网]: https://www.thehugoawards.org/[雨果奖历史获奖]: https://www.thehugoawards.org/hugo-history/
+">[1]</span></a></sup><br>&emsp;&emsp;赛博朋克很大程度上诞生于1960至1970年代的新浪潮科幻运动。<br>劳仑斯·普尔森曾尝试定义赛博朋克文学运动的内涵和社会思潮：</p>
+<blockquote>
+<p>&emsp;&emsp;经典的赛博朋克角色是边缘且性格疏远的独行者。他们生活在社会群体的边缘，一个弥漫反乌托邦氛围的未来：日常生活受到急剧改变的科技影响，普及的计算机化信息笼罩全球，以及侵入性的人体改造。<br>&emsp;&emsp;——劳仑斯·普尔森</p>
+</blockquote>
+<h2 id="作品"><a href="#作品" class="headerlink" title="作品"></a>作品</h2><h3 id="小说"><a href="#小说" class="headerlink" title="小说"></a>小说</h3><h4 id="菲利普·金德里德·迪克-Philip-Kindred-Dick"><a href="#菲利普·金德里德·迪克-Philip-Kindred-Dick" class="headerlink" title="菲利普·金德里德·迪克( Philip Kindred Dick )"></a>菲利普·金德里德·迪克( Philip Kindred Dick )</h4><p>&emsp;&emsp;菲利普·金德里德·迪克( Philip Kindred Dick，1928年12月16日－1982年3月2日)部分作品</p>
+<table>
+<thead>
+<tr>
+<th align="center">时间</th>
+<th align="center">名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1956年</td>
+<td align="center">《少数派报告》( The Minority Report )</td>
+</tr>
+<tr>
+<td align="center">1962年</td>
+<td align="center">《高堡奇人》( The Man in the High Castle )</td>
+</tr>
+<tr>
+<td align="center">1968年</td>
+<td align="center">《仿生人会梦见电子羊吗?》 ( Do Androids Dream of Electric Sheep? )</td>
+</tr>
+<tr>
+<td align="center">1969年</td>
+<td align="center">《尤比克》 ( Ubik )</td>
+</tr>
+<tr>
+<td align="center">1974年</td>
+<td align="center">《流吧！我的眼泪》( Flow My Tears, the Policeman Said )</td>
+</tr>
+</tbody></table>
+<p>&emsp;&emsp;菲利普迪克小说合集-译林出版社<br>(<del>我挺喜欢这个封面的</del>)</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="/img/my/09/Philip Kindred Dick (01).jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto /></td>
+<td align="center"><img src="/img/my/09/Philip Kindred Dick (02).jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto /></td>
+<td align="center"><img src="/img/my/09/Philip Kindred Dick (03).jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto  /></td>
+<td align="center"><img src="/img/my/09/Philip Kindred Dick (04).jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto  /></td>
+<td align="center"><img src="/img/my/09/Philip Kindred Dick (05).jpg" srcset="/img/loading.gif" lazyload height='100%' width='auto' /></td>
+</tr>
+</tbody></table>
+<h4 id="威廉·福特·吉布森-William-Ford-Gibson"><a href="#威廉·福特·吉布森-William-Ford-Gibson" class="headerlink" title="威廉·福特·吉布森( William Ford Gibson )"></a>威廉·福特·吉布森( William Ford Gibson )</h4><p>&emsp;&emsp;威廉·福特·吉布森( William Ford Gibson，1948年3月17日－)部分作品</p>
+<table>
+<thead>
+<tr>
+<th align="center">时间</th>
+<th align="center">名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1984年</td>
+<td align="center">《神经漫游者》( Neuromancer )</td>
+</tr>
+<tr>
+<td align="center">1986年</td>
+<td align="center">《零伯爵》( Count Zero )</td>
+</tr>
+<tr>
+<td align="center">1987年</td>
+<td align="center">《重启蒙娜丽莎》( Mona Lisa Overdrive )</td>
+</tr>
+<tr>
+<td align="center">2014年</td>
+<td align="center">《边缘世界》( The Peripheral )</td>
+</tr>
+</tbody></table>
+<p>&emsp;&emsp;威廉·吉布森所写的《神经漫游者》、《零伯爵》、《重启蒙娜丽莎》三部书统称为《蔓生三部曲》<br>边缘世界被亚马逊公司改编为电视剧，由《西部世界》创作者开发，于2022年10月首播。<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="小说[威廉·福特·吉布森 维基百科]: https://zh.wikipedia.org/wiki/%E5%A8%81%E5%BB%89%C2%B7%E5%90%89%E5%B8%83%E6%A3%AE[菲利普·金德里德·迪克 维基百科]: https://zh.wikipedia.org/wiki/%E8%8F%B2%E5%88%A9%E6%99%AE%C2%B7%E7%8B%84%E5%85%8B
+">[2]</span></a></sup></p>
+<hr>
+<h3 id="电影"><a href="#电影" class="headerlink" title="电影"></a>电影</h3><h4 id="银翼杀手-Blade-Runner"><a href="#银翼杀手-Blade-Runner" class="headerlink" title="银翼杀手 ( Blade Runner )"></a>银翼杀手 ( Blade Runner )</h4><p>&emsp;&emsp;《银翼杀手》改编自小说《仿生人会梦见电子羊吗？》，影片以其复杂的哲学思考和视觉效果而闻名，成为当代科幻电影的经典之作。它探索了人类与机器的道德和情感关系，同时也涉及了政治、社会和环境问题。银翼杀手的影响不仅在科幻电影领域广泛影响，还影响了其他艺术形式，如音乐、文学和游戏等。影片中的经典台词和场景也被引用和致敬无数次。</p>
+<center>
+<img src="/img/my/09/Blade Runner (2).jpg" srcset="/img/loading.gif" lazyload height='360px' />
+</center>
+
+<blockquote>
+<p>目前的银翼杀手系列影片观看顺序按照时间线排序如下:<br>1、银翼杀手(第一部)(电影)<br>2、银翼杀手：黑暗浩劫(2022)  (短片)<br>3、银翼杀手：黑莲花(2032)  (动画电影)<br>4、银翼杀手：复制人黎明(2036)  (短片)<br>5、银翼杀手：无处可逃(2048)  (短片)<br>6、银翼杀手2049 (电影)</p>
+</blockquote>
+<center>
+<img src="/img/my/09/Blade Runner (1).jpg" srcset="/img/loading.gif" lazyload height='360px' />
+
+<p>(<del>这张真的太有感觉了</del>)</p>
+</center>
+
+<h4 id="攻壳机动队-Ghost-in-the-Shell"><a href="#攻壳机动队-Ghost-in-the-Shell" class="headerlink" title="攻壳机动队 ( Ghost in the Shell )"></a>攻壳机动队 ( Ghost in the Shell )</h4><p>&emsp;&emsp;《攻壳机动队》是由日本漫画家士郎正宗于1989年首次连载的日本漫画作品，之后因1995年 Production I.G. 制作、押井守导演的同名动画电影而在国际名声大噪，几乎一直被认为是无法逾越的日本动画巅峰之作。<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="电影[ B站银翼杀手拆解视频]: https://www.bilibili.com/video/BV1M14y1t7xm/?spm_id_from=333.788&amp;vd_source=56e618610f4a89607730694e6a4f5261[ B站银翼杀手2047拆解视频]: https://www.bilibili.com/video/BV1SP411N7Ea/?spm_id_from=333.788&amp;vd_source=56e618610f4a89607730694e6a4f5261
+">[3]</span></a></sup></p>
+<center>
+<img src="/img/my/09/Ghost in the shell.jpg" srcset="/img/loading.gif" lazyload height='360px' />
+
+<p>(<del>神作</del>)</p>
+</center>
+
+<blockquote>
+<p>目前攻壳机动队系列影片的观看顺序按照制作人和时间来排序：<br>押井守：<br>1995：(剧场版)攻壳机动队<br>2004：(剧场版)攻壳机动队2：无罪<br>2008：(剧场版)攻壳机动队2.0(是1995年剧场版的3D重制版)<br>神山健治：<br>2002：( TV第1季)攻壳机动队 STAND ALONE COMPLEX(简称SAC)(26集)<br>2004：( TV第2季)攻壳机动队 S.A.C.2nd GIG(简称GIG)(26集)<br>2005：( OVA )攻壳机动队 SAC：笑面男(TV第1季的总集篇，看不看都可以)<br>2006：( OVA )攻壳机动队 SAC 2nd GIG：个别的十一人(TV第2季的总集篇，看不看都可以)<br>2006：( OVA )攻壳机动队 S.A.C. Solid State Society(简称SSS)<br>2011：(剧场版)攻壳机动队 S.A.C. Solid State Society 3D(是SSS的3D重制版)<br>2020：( TV )攻壳机动队 SAC-2045(简称2045)(12集)(神山健治的新作，衔接SSS剧情)<br>2021：(剧场版)攻壳机动队 SAC-2045 持续可能战争(就是2045的总集篇，看不看都可以)<br>2022：( TV )攻壳机动队 SAC-2045 第二季(12集)(2045的续集，目前为之的全系列最新作)<br>黄濑和哉：<br>2011：(剧场版)攻壳机动队Arise border 1: Ghost Pain<br>2012：(剧场版)攻壳机动队Arise border 2: Ghost Whispers<br>2013：(剧场版)攻壳机动队Arise border 3: Ghost Tears<br>2014：(剧场版)攻壳机动队Arise border 4: Ghost Stands Alone<br>2015：( TV )攻壳机动队ARISE ALTERNATIVE ARCHITECTURE(简称AAA)(10集)(前8集是对Arise剧场版的重编，第9集和第10集是新的故事)</p>
+</blockquote>
+<hr>
+<h3 id="动漫"><a href="#动漫" class="headerlink" title="动漫"></a>动漫</h3><h4 id="心理测量者-PSYCHO-PASS-サイコパス"><a href="#心理测量者-PSYCHO-PASS-サイコパス" class="headerlink" title="心理测量者 ( PSYCHO-PASS サイコパス )"></a>心理测量者 ( PSYCHO-PASS サイコパス )</h4><p>&emsp;&emsp;心理测量者同样是由 Production I.G 所制作，因其想重现《攻壳机动队》和《机动警察》的成功经验而生。此一作品受到多部电影及小说的影响，当中又以《洛城机密》最为著名。</p>
+<blockquote>
+<p>心理测量者观看顺序如下：<br>201210《心理测量者》<br>201407《心理测量者新编集版》<br>201410《心理测量者 2》<br>201501《心理测量者剧场版》<br>201901《心理测量者SS1：罪与罚》<br>201902《心理测量者SS2：第一卫士》<br>201903《心理测量者SS3：在恩怨的彼方》<br>201910《心理测量者 3》<br>202003《心理测量者 3：第一监视者》<br>202305《心理测量者剧场版：天意》</p>
+</blockquote>
+<h4 id="爱x死x机器人-Love-Death-amp-Robots"><a href="#爱x死x机器人-Love-Death-amp-Robots" class="headerlink" title="爱x死x机器人 ( Love, Death &amp; Robots )"></a>爱x死x机器人 ( Love, Death &amp; Robots )</h4><p>&emsp;&emsp;《爱，死亡和机器人》（英语：Love, Death &amp; Robots）是一部美国独立单元成人动画剧集，由乔舒亚·多南、大卫·芬奇、珍妮佛·米勒和蒂姆·米勒制作。每集由不同国家的团队所制作。第一季于2019年3月在奈飞首播，共18集。第二季于2021年5月释出，共8集。第三季于2022年5月释出，共9集。<br>&emsp;&emsp;爱x死x机器人每集都采用了独特的动画风格和技术，涵盖了各种类型，其丰富且深刻的制作和天马行空的想象力令人着迷。<br>(<del>据说2024年有第四季，期待！</del>)</p>
+<h4 id="赛博朋克：边缘行者-Cyberpunk-Edgerunners"><a href="#赛博朋克：边缘行者-Cyberpunk-Edgerunners" class="headerlink" title="赛博朋克：边缘行者 ( Cyberpunk:Edgerunners )"></a>赛博朋克：边缘行者 ( Cyberpunk:Edgerunners )</h4><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=450 src="//music.163.com/outchain/player?type=0&id=7645193495&auto=0&height=430"></iframe>
+
+<p>&emsp;&emsp;《赛博朋克：边缘行者》是由TRIGGER制作的一部网络动画，是游戏《赛博朋克2077》的衍生作品。该剧集共有10集，于2022年9月上线。<br>&emsp;&emsp;Edgerunner 是原型桌游对玩家所扮演的角色的命名。其中 Edge 意喻角色活动区，而 Runner 则是来自著名赛博朋克题材作品银翼杀手( Blade Runner )。<br>&emsp;&emsp;该动画把游戏赛博朋克2077带到了本不属于它的高度，给游戏业影视化的发展奠定了不小的契机，无论是画面还是音乐都是顶中顶，后劲十足。我愿称之为2022年度最佳独立动画！<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><span class="hint--top hint--rounded" aria-label="动漫[Production_I.G 维基百科]: https://zh.wikipedia.org/wiki/Production_I.G[《心理测量者》官网]: https://psycho-pass.com/[《心理测量者》故事时间线]: https://psycho-pass.com/archive/story/[《赛博朋克：边缘行者》官网]: https://www.cyberpunk.net/en/edgerunners[《赛博朋克：边缘行者》官方MV]: https://www.bilibili.com/video/BV1LB4y1E7iD/?spm_id_from=333.337.search-card.all.click&amp;vd_source=56e618610f4a89607730694e6a4f5261[《赛博朋克：边缘行者》完整片尾曲]: https://www.bilibili.com/video/BV1Ba411g7EC/?spm_id_from=333.337.search-card.all.click&amp;vd_source=56e618610f4a89607730694e6a4f5261
+">[4]</span></a></sup><br>(<del>夜之城没有活着的传奇 扳机社nb！</del>)</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="/img/my/09/Cyberpunk_Edgerunners_D13.jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto /> 倒计时13天</td>
+<td align="center"><img src="/img/my/09/Cyberpunk_Edgerunners_D12.jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto /> 倒计时12天</td>
+<td align="center"><img src="/img/my/09/Cyberpunk_Edgerunners_D11.jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto /> 倒计时11天</td>
+<td align="center"><img src="/img/my/09/Cyberpunk_Edgerunners_D10.jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto /> 倒计时10天</td>
+</tr>
+<tr>
+<td align="center"><img src="/img/my/09/Cyberpunk_Edgerunners_D09.jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto /> 倒计时09天</td>
+<td align="center"><img src="/img/my/09/Cyberpunk_Edgerunners_D08.jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto /> 倒计时08天</td>
+<td align="center"><img src="/img/my/09/Cyberpunk_Edgerunners_D07.jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto /> 倒计时07天</td>
+<td align="center"><img src="/img/my/09/Cyberpunk_Edgerunners_D06.jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto /> 倒计时06天</td>
+</tr>
+<tr>
+<td align="center"><img src="/img/my/09/Cyberpunk_Edgerunners_D05.jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto /> 倒计时05天</td>
+<td align="center"><img src="/img/my/09/Cyberpunk_Edgerunners_D04.jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto /> 倒计时04天</td>
+<td align="center"><img src="/img/my/09/Cyberpunk_Edgerunners_D03.jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto /> 倒计时03天</td>
+<td align="center"><img src="/img/my/09/Cyberpunk_Edgerunners_D02.jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto /> 倒计时02天</td>
+</tr>
+<tr>
+<td align="center"><img src="/img/my/09/Cyberpunk_Edgerunners_D01.gif" srcset="/img/loading.gif" lazyload height='100%' width=auto /> 倒计时01天</td>
+<td align="center"><img src="/img/my/09/Cyberpunk_Edgerunners_D00.jpg" srcset="/img/loading.gif" lazyload height='100%' width=auto /> 倒计时0天</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h3><h4 id="赛博朋克2077-Cyberpunk-2077"><a href="#赛博朋克2077-Cyberpunk-2077" class="headerlink" title="赛博朋克2077 ( Cyberpunk 2077 )"></a>赛博朋克2077 ( Cyberpunk 2077 )</h4><p>&emsp;&emsp;《赛博朋克2077》（英语：Cyberpunk 2077，香港常用英文，台湾译作“电驭叛客2077”）是一款由CD Projekt开发并于2020年12月发行的动作角色扮演游戏。背景为2077年美国加利福尼亚州的“赛博朋克”风格反乌托邦式城市“夜之城”，玩家在这一开放世界中扮演大名鼎鼎的“ V ”。<br>&emsp;&emsp;游戏最早在2012年以预告片形式公布，2018年3月21日开发商 CD Projekt Red 宣布在弗罗茨瓦夫开启一新的工作室协助游戏开发。在2019年E3电子娱乐展上宣布《赛博朋克2077》将于2020年4月16日发售，稍后公布游戏将登陆 Google Stadia 云游戏平台。2020年1月16日开发商 CD Projekt RED 宣布将游戏发行时间推迟到了2020年9月17日，2020年6月18日宣布延后至11月19日，2020年10月28日宣布再度延期至12月10日。<br>&emsp;&emsp;“没有人会记得那些按时发布的垃圾游戏。”这句话出自 CD Projekt Red 的创始人马尔钦·伊温斯基（ Marcin Iwinski ）。该游戏公司以《巫师》系列而享誉天下，而在之后却又因为《赛博朋克2077》而臭名昭著。<br>（<del>CDPR你真该给扳机社磕一个</del>）</p>
+<h4 id="赛博朋克酒保行动-VA-11-HALL-A-Cyberpunk-Bartender-Action"><a href="#赛博朋克酒保行动-VA-11-HALL-A-Cyberpunk-Bartender-Action" class="headerlink" title="赛博朋克酒保行动 ( VA-11 HALL-A:Cyberpunk Bartender Action )"></a>赛博朋克酒保行动 ( VA-11 HALL-A:Cyberpunk Bartender Action )</h4><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=100 src="//music.163.com/outchain/player?type=2&id=441491892&auto=0&height=66"></iframe>
+
+<p>&emsp;&emsp;《VA-11 Hall-A：赛博朋克酒保行动》（英语原名：VA-11 HALL-A:Cyberpunk Bartender Action）是一款关于waifu，科技及后-反乌托邦生活，以招待（<del>灌醉</del>）顾客为宗旨的调酒师模拟游戏。是一款具有视觉小说元素的独立调酒师模拟视频游戏，游戏由委内瑞拉工作室Sukeban Games开发，发行于2016年6月。<br>&emsp;&emsp;赛博朋克酒保行动仅仅用一间小小的酒吧就描绘出了一个庞大的赛博朋克世界观。调制饮料，改变人生 ( Time to mix drinks and change life )。<br>&emsp;&emsp;《VA-11 Hall-A：赛博朋克酒保行动》游戏制作者( P站ID：Kiririn51 )曾经立下flag表示游戏卖出10万份就亲自画主角的本子。期待该游戏的新作。(<del>2020就已经放出预告了</del>)<sup id="fnref:5" class="footnote-ref"><a href="#fn:5" rel="footnote"><span class="hint--top hint--rounded" aria-label="游戏[《赛博朋克 2077》官网]: https://www.cyberpunk.net/[《赛博朋克酒保行动》官网]: https://waifubartending.com/[《赛博朋克酒保行动》网易云原声集]: https://music.163.com/#/album?id=35004212[《赛博朋克酒保行动》短片小说]: https://sukeban.moe/index.php/2023/01/02/va-11-hall-a-sapphic-pussy-rhapsody/[Kiririn51的P站图]: https://www.pixiv.net/users/4361529/illustrations[游戏梗知识]: https://www.bilibili.com/video/BV1Go4y1Z7rK/?spm_id_from=333.999.0.0&amp;vd_source=56e618610f4a89607730694e6a4f5261[《赛博朋克酒保行动》新作预告]: https://www.youtube.com/watch?v=6BuhVTeD9lc
+">[5]</span></a></sup><br>(<del>名梗：人不能艹狗，至少不应该。出自该游戏。</del>)</p>
+<iframe src=" https://sukeban.moe/index.php/2023/01/02/va-11-hall-a-sapphic-pussy-rhapsody/" width="100%" height="480" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame">
+</iframe>
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>Cyberpunk<br>[赛博朋克( Cyberpunk ) 维基百科]: <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B#%E5%B0%8F%E8%AA%AA">https://zh.wikipedia.org/wiki/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B#%E5%B0%8F%E8%AA%AA</a><br>[蒸汽朋克( Steampunk ) 维基百科]: <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%92%B8%E6%B1%BD%E6%9C%8B%E5%85%8B">https://zh.wikipedia.org/wiki/%E8%92%B8%E6%B1%BD%E6%9C%8B%E5%85%8B</a><br>[生物朋克( Biopunk ) 维基百科]: <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%94%9F%E7%89%A9%E6%9C%8B%E5%85%8B">https://zh.wikipedia.org/wiki/%E7%94%9F%E7%89%A9%E6%9C%8B%E5%85%8B</a><br>[新云奖官网]: <a target="_blank" rel="noopener" href="https://nebulas.sfwa.org//">https://nebulas.sfwa.org//</a><br>[雨果奖官网]: <a target="_blank" rel="noopener" href="https://www.thehugoawards.org/">https://www.thehugoawards.org/</a><br>[雨果奖历史获奖]: <a target="_blank" rel="noopener" href="https://www.thehugoawards.org/hugo-history/">https://www.thehugoawards.org/hugo-history/</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>小说<br>[威廉·福特·吉布森 维基百科]: <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A8%81%E5%BB%89%C2%B7%E5%90%89%E5%B8%83%E6%A3%AE">https://zh.wikipedia.org/wiki/%E5%A8%81%E5%BB%89%C2%B7%E5%90%89%E5%B8%83%E6%A3%AE</a><br>[菲利普·金德里德·迪克 维基百科]: <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%8F%B2%E5%88%A9%E6%99%AE%C2%B7%E7%8B%84%E5%85%8B">https://zh.wikipedia.org/wiki/%E8%8F%B2%E5%88%A9%E6%99%AE%C2%B7%E7%8B%84%E5%85%8B</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span>电影<br>[ B站银翼杀手拆解视频]: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1M14y1t7xm/?spm_id_from=333.788&amp;vd_source=56e618610f4a89607730694e6a4f5261">https://www.bilibili.com/video/BV1M14y1t7xm/?spm_id_from=333.788&amp;vd_source=56e618610f4a89607730694e6a4f5261</a><br>[ B站银翼杀手2047拆解视频]: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1SP411N7Ea/?spm_id_from=333.788&amp;vd_source=56e618610f4a89607730694e6a4f5261">https://www.bilibili.com/video/BV1SP411N7Ea/?spm_id_from=333.788&amp;vd_source=56e618610f4a89607730694e6a4f5261</a>
+<a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:4" class="footnote-text"><span>动漫<br>[Production_I.G 维基百科]: <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Production_I.G">https://zh.wikipedia.org/wiki/Production_I.G</a><br>[《心理测量者》官网]: <a target="_blank" rel="noopener" href="https://psycho-pass.com/">https://psycho-pass.com/</a><br>[《心理测量者》故事时间线]: <a target="_blank" rel="noopener" href="https://psycho-pass.com/archive/story/">https://psycho-pass.com/archive/story/</a><br>[《赛博朋克：边缘行者》官网]: <a target="_blank" rel="noopener" href="https://www.cyberpunk.net/en/edgerunners">https://www.cyberpunk.net/en/edgerunners</a><br>[《赛博朋克：边缘行者》官方MV]: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1LB4y1E7iD/?spm_id_from=333.337.search-card.all.click&amp;vd_source=56e618610f4a89607730694e6a4f5261">https://www.bilibili.com/video/BV1LB4y1E7iD/?spm_id_from=333.337.search-card.all.click&amp;vd_source=56e618610f4a89607730694e6a4f5261</a><br>[《赛博朋克：边缘行者》完整片尾曲]: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ba411g7EC/?spm_id_from=333.337.search-card.all.click&amp;vd_source=56e618610f4a89607730694e6a4f5261">https://www.bilibili.com/video/BV1Ba411g7EC/?spm_id_from=333.337.search-card.all.click&amp;vd_source=56e618610f4a89607730694e6a4f5261</a>
+<a href="#fnref:4" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:5" class="footnote-text"><span>游戏<br>[《赛博朋克 2077》官网]: <a target="_blank" rel="noopener" href="https://www.cyberpunk.net/">https://www.cyberpunk.net/</a><br>[《赛博朋克酒保行动》官网]: <a target="_blank" rel="noopener" href="https://waifubartending.com/">https://waifubartending.com/</a><br>[《赛博朋克酒保行动》网易云原声集]: <a target="_blank" rel="noopener" href="https://music.163.com/#/album?id=35004212">https://music.163.com/#/album?id=35004212</a><br>[《赛博朋克酒保行动》短片小说]: <a target="_blank" rel="noopener" href="https://sukeban.moe/index.php/2023/01/02/va-11-hall-a-sapphic-pussy-rhapsody/">https://sukeban.moe/index.php/2023/01/02/va-11-hall-a-sapphic-pussy-rhapsody/</a><br>[Kiririn51的P站图]: <a target="_blank" rel="noopener" href="https://www.pixiv.net/users/4361529/illustrations">https://www.pixiv.net/users/4361529/illustrations</a><br>[游戏梗知识]: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Go4y1Z7rK/?spm_id_from=333.999.0.0&amp;vd_source=56e618610f4a89607730694e6a4f5261">https://www.bilibili.com/video/BV1Go4y1Z7rK/?spm_id_from=333.999.0.0&amp;vd_source=56e618610f4a89607730694e6a4f5261</a><br>[《赛博朋克酒保行动》新作预告]: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=6BuhVTeD9lc">https://www.youtube.com/watch?v=6BuhVTeD9lc</a>
+<a href="#fnref:5" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/09/09/08%20%E6%89%B3%E6%9C%BA%E7%A4%BE/">
+                        <span class="hidden-mobile">TRIGGER</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"NFyyUl0pJ0auJMeCHx102sBc-gzGzoHsz","appKey":"yYIXtg2sR126Nc8N0tO7nyfo","placeholder":"说点什么","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+           <div>记录 | 成长</div> 
+        </div>
+      </div>
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+             🤨总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+             😔总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="/js/my_js.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
